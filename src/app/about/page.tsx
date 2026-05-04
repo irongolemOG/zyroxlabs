@@ -31,33 +31,29 @@ export default function About() {
       </section>
 
       {/* ── MISSION SECTION ── */}
-      <section style={{ padding: '90px 0', position: 'relative', zIndex: 1 }}>
+      <section className="about-mission">
         <div className="container" style={{ maxWidth: '900px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div className="about-mission-grid">
             <div className="sa-left">
               <span className="section-label">Our Mission</span>
               <h2 className="section-title">Why Zyrox Labs Exists</h2>
-              <p className="section-sub" style={{ maxWidth: '100%', lineHeight: '1.8' }}>
+              <p className="section-sub">
                 Traditional website development is broken. Agencies charge exorbitant fees, take months to deliver, and often produce slow websites that fail to convert.
               </p>
-              <p style={{ color: 'var(--muted)', fontSize: '1rem', lineHeight: '1.8', marginTop: '1rem', fontWeight: 300 }}>
+              <p className="about-p-extra">
                 We're changing that. By leveraging AI and modern frameworks, we deliver enterprise-grade websites at a fraction of the time and cost — without ever compromising on quality.
               </p>
             </div>
-            <div className="sa-right" style={{
-              background: 'linear-gradient(135deg, rgba(99,102,241,.1), rgba(167,139,250,.05))',
-              border: '1px solid rgba(99,102,241,.2)', borderRadius: '20px',
-              padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem'
-            }}>
+            <div className="sa-right about-stats-box">
               {[
                 { num: '48h', label: 'Average Delivery' },
                 { num: '10+', label: 'Sites Launched' },
                 { num: '90%', label: 'Cost Savings vs Agencies' },
                 { num: '100%', label: 'Client Satisfaction' },
               ].map(s => (
-                <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>
-                  <span style={{ color: 'var(--muted)', fontSize: '.9rem' }}>{s.label}</span>
-                  <span style={{ fontFamily: 'var(--fh)', fontSize: '1.6rem', fontWeight: 700, background: 'linear-gradient(135deg, #fff, var(--a2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{s.num}</span>
+                <div key={s.label} className="about-stat-item">
+                  <span className="about-stat-label">{s.label}</span>
+                  <span className="about-stat-num">{s.num}</span>
                 </div>
               ))}
             </div>
@@ -90,32 +86,23 @@ export default function About() {
       </section>
 
       {/* ── FOUNDERS SECTION ── */}
-      <section style={{ padding: '90px 0', position: 'relative', zIndex: 1 }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+      <section className="about-team">
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <div className="about-team-header">
             <span className="section-label sa-up">The Team</span>
             <h2 className="section-title sa-up">The People Behind Zyrox Labs</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          <div className="about-team-grid">
             {[
               { initials: 'RJ', name: 'Reet Jain', role: 'Co-Founder & Creative Director', bio: 'Leads design strategy and UI/UX across all projects. Passionate about creating digital experiences that are both beautiful and effective.' },
               { initials: 'LA', name: 'Laqshya Ajmera', role: 'Co-Founder & Technical Lead', bio: 'Architecting the technology stack and AI integrations that make Zyrox Labs faster and more capable than traditional agencies.' },
               { initials: 'NM', name: 'Nikunj Mehta', role: 'Partner & Strategic Investor', bio: 'A key strategic partner and investor helping Zyrox Labs scale its operations and reach new market heights.' },
             ].map(f => (
-              <div key={f.name} className="sa-scale" style={{
-                background: 'var(--surface)', border: '1px solid var(--border)',
-                borderRadius: '20px', padding: '2rem', textAlign: 'center'
-              }}>
-                <div style={{
-                  width: '70px', height: '70px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--a), var(--a3))',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.3rem', fontWeight: 700, color: '#fff',
-                  margin: '0 auto 1.25rem'
-                }}>{f.initials}</div>
-                <h3 style={{ fontFamily: 'var(--fh)', fontSize: '1.1rem', fontWeight: 600, color: 'var(--text)', marginBottom: '4px' }}>{f.name}</h3>
-                <div style={{ color: 'var(--a2)', fontSize: '.8rem', fontWeight: 500, marginBottom: '1rem', letterSpacing: '.03em' }}>{f.role}</div>
-                <p style={{ color: 'var(--muted)', fontSize: '.88rem', lineHeight: '1.65' }}>{f.bio}</p>
+              <div key={f.name} className="sa-scale team-card">
+                <div className="team-avatar">{f.initials}</div>
+                <h3 className="team-name">{f.name}</h3>
+                <div className="team-role">{f.role}</div>
+                <p className="team-bio">{f.bio}</p>
               </div>
             ))}
           </div>
