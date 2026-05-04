@@ -30,38 +30,36 @@ export default function Contact() {
       </section>
 
       {/* ── CONTACT METHODS ── */}
-      <section style={{ padding: '90px 0', position: 'relative', zIndex: 1 }}>
+      <section className="contact-methods">
         <div className="container" style={{ maxWidth: '900px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div className="contact-header">
             <span className="section-label sa-up">Contact</span>
             <h2 className="section-title sa-up">Reach Us Your Way</h2>
-            <p className="section-sub sa-up" style={{ margin: '0 auto' }}>Three ways to connect — all of them fast.</p>
+            <p className="section-sub sa-up">Three ways to connect — all of them fast.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+          <div className="contact-grid">
             {/* WhatsApp */}
             <a
               href="https://wa.me/919150811600?text=Hi%2C%20I%27m%20interested%20in%20getting%20a%20website%20by%20Zyrox%20Labs!"
               target="_blank"
               rel="noopener noreferrer"
-              className="feat-card sa-up"
-              style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '.75rem', cursor: 'pointer' }}
+              className="feat-card sa-up contact-card"
             >
-              <div className="feat-icon" style={{ background: 'rgba(37,211,102,.1)', border: '1px solid rgba(37,211,102,.25)' }}>
+              <div className="feat-icon wa-icon">
                 <svg style={{ width: '24px', height: '24px', fill: '#25d366' }} viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.836L.057 23.272a.75.75 0 0 0 .92.921l5.51-1.457A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.95-1.355l-.355-.212-3.67.97.986-3.598-.232-.37A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
                 </svg>
               </div>
-              <h3 className="feat-title" style={{ color: 'var(--text)' }}>WhatsApp (Fastest)</h3>
+              <h3 className="feat-title">WhatsApp (Fastest)</h3>
               <p className="feat-desc">Get a response within minutes. Share your requirements directly and we'll get back to you instantly.</p>
-              <div style={{ color: '#25d366', fontWeight: 600, fontSize: '.9rem', marginTop: 'auto' }}>+91 91508 11600 →</div>
+              <div className="contact-link wa-text">+91 91508 11600 →</div>
             </a>
 
             {/* Email */}
             <a
               href="mailto:zyroxlabs@gmail.com"
-              className="feat-card sa-up"
-              style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '.75rem', cursor: 'pointer' }}
+              className="feat-card sa-up contact-card"
             >
               <div className="feat-icon">
                 <svg style={{ width: '24px', height: '24px', fill: 'none', stroke: 'var(--a2)', strokeWidth: 2 }} viewBox="0 0 24 24">
@@ -69,41 +67,39 @@ export default function Contact() {
                   <path d="m2 7 10 8 10-8" />
                 </svg>
               </div>
-              <h3 className="feat-title" style={{ color: 'var(--text)' }}>Email Us</h3>
+              <h3 className="feat-title">Email Us</h3>
               <p className="feat-desc">Send us a detailed brief, reference sites, or any files. We respond to every email within 24 hours.</p>
-              <div style={{ color: 'var(--a2)', fontWeight: 600, fontSize: '.9rem', marginTop: 'auto' }}>zyroxlabs@gmail.com →</div>
+              <div className="contact-link">zyroxlabs@gmail.com →</div>
             </a>
 
             {/* Call 1 */}
             <a
               href="tel:+919150811600"
-              className="feat-card sa-up"
-              style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '.75rem', cursor: 'pointer' }}
+              className="feat-card sa-up contact-card"
             >
               <div className="feat-icon">
                 <svg style={{ width: '24px', height: '24px', fill: 'none', stroke: 'var(--a2)', strokeWidth: 2 }} viewBox="0 0 24 24">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </div>
-              <h3 className="feat-title" style={{ color: 'var(--text)' }}>Primary Support</h3>
+              <h3 className="feat-title">Primary Support</h3>
               <p className="feat-desc">Speak with our lead coordinator for project inquiries and pricing details.</p>
-              <div style={{ color: 'var(--a2)', fontWeight: 600, fontSize: '.9rem', marginTop: 'auto' }}>+91 91508 11600 →</div>
+              <div className="contact-link">+91 91508 11600 →</div>
             </a>
 
             {/* Call 2 */}
             <a
               href="tel:+919080989597"
-              className="feat-card sa-up"
-              style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '.75rem', cursor: 'pointer' }}
+              className="feat-card sa-up contact-card"
             >
               <div className="feat-icon">
                 <svg style={{ width: '24px', height: '24px', fill: 'none', stroke: 'var(--a2)', strokeWidth: 2 }} viewBox="0 0 24 24">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </div>
-              <h3 className="feat-title" style={{ color: 'var(--text)' }}>Direct Hotline</h3>
+              <h3 className="feat-title">Direct Hotline</h3>
               <p className="feat-desc">Instant access for technical consulting and active project updates.</p>
-              <div style={{ color: 'var(--a2)', fontWeight: 600, fontSize: '.9rem', marginTop: 'auto' }}>+91 90809 89597 →</div>
+              <div className="contact-link">+91 90809 89597 →</div>
             </a>
           </div>
         </div>

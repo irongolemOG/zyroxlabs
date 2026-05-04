@@ -56,10 +56,12 @@ export default function GsapInitializer() {
 
       const chars = h1 ? h1.querySelectorAll('.char') : [];
       if (chars.length > 0) {
+        const isMobile = window.innerWidth <= 640;
         tl.to(chars,{
           opacity:1,y:0,rotateX:0,
-          duration:.06,ease:'power2.out',
-          stagger:.025
+          duration:isMobile ? .04 : .06,
+          ease:'power2.out',
+          stagger:isMobile ? .015 : .025
         },'-=.3');
       }
 
@@ -78,9 +80,11 @@ export default function GsapInitializer() {
       gsap.to('.orb-2',{y:60, ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:3}});
 
       /* ── Section title parallax (content moves, BG stays fixed) ── */
-      gsap.utils.toArray('.section-title').forEach((el: any)=>{
-        gsap.fromTo(el,{y:40},{y:-25,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1.8}});
-      });
+      if (window.innerWidth > 768) {
+        gsap.utils.toArray('.section-title').forEach((el: any)=>{
+          gsap.fromTo(el,{y:40},{y:-25,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1.8}});
+        });
+      }
 
       /* ── sa-up: fade + fly up ── */
       gsap.utils.toArray('.sa-up').forEach((el: any, i: number)=>{
@@ -107,10 +111,18 @@ export default function GsapInitializer() {
           scrollTrigger:{trigger:el,start:'top 86%',toggleActions:'play none none none'},delay:i*.1});
       });
 
-      /* ── sa-rot: 3D flip in ── */
+      /* ── sa-rot: 3D flip in (simplified on mobile) ── */
+      const isMobile = window.innerWidth <= 640;
       gsap.utils.toArray('.sa-rot').forEach((el: any, i: number)=>{
-        gsap.to(el,{opacity:1,rotateX:0,y:0,duration:.75,ease:'power2.out',
-          scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},delay:(i%3)*.1});
+        gsap.to(el,{
+          opacity:1,
+          rotateX:0,
+          y:0,
+          duration: isMobile ? .5 : .75,
+          ease:'power2.out',
+          scrollTrigger:{trigger:el,start: isMobile ? 'top 92%' : 'top 88%',toggleActions:'play none none none'},
+          delay: isMobile ? 0 : (i%3)*.1
+        });
       });
 
       /* ── Pricing cards stagger ── */

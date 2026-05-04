@@ -23,7 +23,7 @@ export default function Home() {
         <div className="hero-badge" id="heroBadge"><span className="badge-dot"></span>AI-Powered Web Development</div>
 
         <h1 className="hero-h1" id="heroH1">
-          Get a Premium Website <span className="line-gradient"><span className="scramble-wrap" id="scrT">in 48 Hours</span></span><br/>— <em>Powered by AI</em>
+          Get a Premium Website <br className="mob-only"/><span className="line-gradient"><span className="scramble-wrap" id="scrT">in 48 Hours</span></span><br/>— <em>Powered by AI</em>
         </h1>
 
         <p className="hero-sub" id="heroSub">We build modern, high-performance websites at a fraction of traditional costs. Fast delivery. Stunning results.</p>
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="features-header">
             <span className="section-label sa-up">What You Get</span>
             <h2 className="section-title sa-up">Everything You Need.<br/>Nothing You Don't.</h2>
-            <p className="section-sub sa-up" style={{ margin: '0 auto' }}>We've stripped away the bloat traditional agencies charge for — and kept everything that makes a website actually convert.</p>
+            <p className="section-sub sa-up">We've stripped away the bloat traditional agencies charge for — and kept everything that makes a website actually convert.</p>
           </div>
           <div className="features-grid">
             <div className="feat-card sa-rot"><div className="feat-icon">⚡</div><h3 className="feat-title">Blazing Fast Delivery</h3><p className="feat-desc">Your website goes live in 1–3 business days. No endless revision cycles. We move fast so you can too.</p></div>
@@ -142,8 +142,8 @@ export default function Home() {
             <div>
               <span className="section-label sa-left">Our Process</span>
               <h2 className="section-title sa-left">From Brief to<br/>Live in 3 Steps</h2>
-              <p className="section-sub sa-left" style={{ marginBottom: '2rem' }}>A streamlined process that gets you an elite website without the usual headaches.</p>
-              <div>
+              <p className="section-sub sa-left">A streamlined process that gets you an elite website without the usual headaches.</p>
+              <div className="hiw-steps">
                 <div className="step sa-left"><div className="step-num">01</div><div className="step-line"></div><div><h4 className="step-title">Tell Us About Your Vision</h4><p className="step-desc">Fill out a quick brief — your goals, brand, and what you need. Takes less than 5 minutes.</p></div></div>
                 <div className="step sa-left"><div className="step-num">02</div><div className="step-line"></div><div><h4 className="step-title">We Design & Build With AI</h4><p className="step-desc">Our team uses AI-powered tools to build a high-converting, beautiful website tailored to your brand.</p></div></div>
                 <div className="step sa-left"><div className="step-num">03</div><div className="step-line"></div><div><h4 className="step-title">Review, Refine & Go Live</h4><p className="step-desc">You review the design, we make any tweaks, and your site is deployed live — within 48 hours.</p></div></div>
@@ -171,7 +171,7 @@ export default function Home() {
           <div className="pricing-header">
             <span className="section-label sa-up">Simple Pricing</span>
             <h2 className="section-title sa-up">Transparent. No Surprises.</h2>
-            <p className="section-sub sa-up" style={{ margin: '0 auto' }}>Agency-quality websites at a price that makes sense for every stage of business.</p>
+            <p className="section-sub sa-up">Agency-quality websites at a price that makes sense for every stage of business.</p>
           </div>
           <div className="pricing-grid">
             <div className="price-card sa-up">
@@ -212,7 +212,7 @@ export default function Home() {
           <div className="testimonials-header">
             <span className="section-label sa-up">Client Stories</span>
             <h2 className="section-title sa-up">Brands That Trusted Us</h2>
-            <p className="section-sub sa-up" style={{ margin: '0 auto' }}>Real founders. Real results. See how we've helped businesses across industries elevate their digital presence.</p>
+            <p className="section-sub sa-up">Real founders. Real results. See how we've helped businesses across industries elevate their digital presence.</p>
           </div>
           <div className="testi-grid">
             <div className="testi-card sa-up">
@@ -267,7 +267,7 @@ export default function Home() {
                   <div className="testi-role">Founder, Superbhumans</div>
                 </div>
               </div>
-              <a href="https://superbhumans.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-visit">
+              <a href="https://skechem.co.in/" target="_blank" rel="noopener noreferrer" className="btn-visit">
                 Visit Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M2 10L10 2M10 2H4.5M10 2V7.5"/></svg>
               </a>
             </div>

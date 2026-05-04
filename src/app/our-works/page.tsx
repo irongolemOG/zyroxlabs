@@ -110,76 +110,42 @@ export default async function OurWorks() {
       </section>
 
       {/* PORTFOLIO GRID */}
-      <section className="features" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
+      <section className="works-gallery">
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '1.5rem'
-          }}>
+          <div className="works-grid">
             {allProjects.map((project: any) => (
               <a
                 key={project.id}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="sa-up"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  textDecoration: 'none',
-                  border: '1px solid var(--border)',
-                  background: 'var(--bg2)',
-                  transition: 'border-color .3s, transform .3s, box-shadow .3s',
-                  cursor: 'pointer',
-                }}
+                className="sa-up work-card"
               >
                 {/* Square image box */}
-                <div style={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  overflow: 'hidden',
-                  flexShrink: 0,
-                  background: 'linear-gradient(135deg, rgba(99,102,241,.12), rgba(167,139,250,.06))',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'relative'
-                }}>
+                <div className="work-image-box">
                   {project.image_url ? (
                     <img
                       src={project.image_url}
                       alt={project.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      className="work-img"
                       loading="lazy"
                     />
                   ) : (
-                    <div style={{ textAlign: 'center', padding: '1rem' }}>
-                      <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🌐</div>
-                      <div style={{ color: 'var(--a2)', fontSize: '0.8rem', fontWeight: 500 }}>View Live Site →</div>
+                    <div className="work-img-placeholder">
+                      <div className="placeholder-icon">🌐</div>
+                      <div className="placeholder-cta">View Live Site →</div>
                     </div>
                   )}
                 </div>
 
                 {/* Card text */}
-                <div style={{ padding: '1.5rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
-                    <span style={{
-                      display: 'inline-block', fontSize: '0.68rem', fontWeight: 600,
-                      letterSpacing: '0.1em', textTransform: 'uppercase',
-                      color: 'var(--a2)', background: 'rgba(99,102,241,.1)',
-                      padding: '3px 10px', borderRadius: '100px',
-                      border: '1px solid rgba(99,102,241,.2)'
-                    }}>{project.category}</span>
-                    <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>{project.industry}</span>
+                <div className="work-info">
+                  <div className="work-meta">
+                    <span className="work-category">{project.category}</span>
+                    <span className="work-industry">{project.industry}</span>
                   </div>
-                  <h3 style={{
-                    fontFamily: 'var(--fh)', fontSize: '1.05rem', fontWeight: 600,
-                    marginBottom: '0.5rem', color: 'var(--text)', lineHeight: 1.3
-                  }}>{project.title}</h3>
-                  <p style={{ color: 'var(--muted)', fontSize: '0.85rem', lineHeight: 1.65 }}>
+                  <h3 className="work-title">{project.title}</h3>
+                  <p className="work-desc">
                     {project.description}
                   </p>
                 </div>
