@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Outfit, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
@@ -8,10 +8,26 @@ import BackgroundLayers from '@/components/BackgroundLayers'
 const outfit = Outfit({ subsets: ['latin'], variable: '--fh' })
 const cormorant = Cormorant_Garamond({ subsets: ['latin'], style: ['normal', 'italic'], weight: ['400'], variable: '--fs' })
 
+export const viewport: Viewport = {
+  themeColor: '#04040a',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export const metadata: Metadata = {
   title: 'Zyrox Labs — Smart Websites Powered by AI',
   description: 'We build modern, high-performance websites at a fraction of traditional costs. Fast delivery. Stunning results.',
   manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
   openGraph: {
     title: 'Zyrox Labs — Smart Websites Powered by AI',
     description: 'We build modern, high-performance websites at a fraction of traditional costs. Fast delivery. Stunning results.',
@@ -19,26 +35,27 @@ export const metadata: Metadata = {
     siteName: 'Zyrox Labs',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Zyrox Labs — Smart Websites Powered by AI',
+        url: '/favicon.png',
+        width: 512,
+        height: 512,
+        alt: 'Zyrox Labs',
       },
     ],
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Zyrox Labs — Smart Websites Powered by AI',
     description: 'We build modern, high-performance websites at a fraction of traditional costs. Fast delivery. Stunning results.',
-    images: ['/og-image.png'],
+    images: ['/favicon.png'],
   },
   metadataBase: new URL('https://zyroxlabs.in'),
   alternates: {
     canonical: '/',
   },
 }
+
 
 export default function RootLayout({
   children,
